@@ -1,0 +1,24 @@
+﻿@using Ictshop.Models;
+@model List<Hangsanxuat>
+
+
+<br />
+
+<div class="bg-success">
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            String a = item.Tenhang.Replace(" ", "");   //Cắt khoảng trắng ở các chuỗi a, str
+            String str = a + "Partial";
+            String d = str.Trim();
+            <div class="col-lg-1">
+                <button class="success"><a href="@Url.Action(d, "SanPham")"> @item.Tenhang</a></button>
+            </div>
+
+        }
+
+    </div>
+
+</div>
